@@ -10,21 +10,27 @@
 </head>
 
 <body>
-    <h4>Playlist Hashtag</h4>
-    <img src="/resources/images/Have_a_Nice_Day_Bon_Jovi_album.jpg" />
-    <div>
-        <div>Nome da música</div>
-        <div>Nome da banda</div>
-
-        <div> <i class="bi bi-heart"></i></div>
+    <div class="music-container">
+    <h4 id="playlist-name">Playlist Hashtag</h4>
+    <img id="cover" src="/resources/images/Have_a_Nice_Day_Bon_Jovi_album.jpg" />
+    <div id="below-cover">
+        <div>   
+            <div id="song-name">Nome da música</div>
+            <div id="artist-name">Nome da banda</div>
+        </div>
+         <div id="like" class="button" class="light-color"> <i class="bi bi-heart"></i></div>
     </div>
-    <div>Barra de progresso</div>
-    <div>
-        <div> <i class="bi bi-shuffle"></i></div>
-        <div> <i class="bi bi-skip-start-fill"></i></div>
-        <div> <i class="bi bi-play-circle-fill"></i></div>
-        <div> <i class="bi bi-skip-end-fill"></i></div>
-        <div> <i class="bi bi-repeat"></i></div>
+   
+    <div id="progress-bar">
+        <div id="progress" class="progress"></div>
+    </div>
+    <div id="button-container">
+        <div id="shuffle" class="button"> <i class="bi bi-shuffle"></i></div>
+        <div id="previous" class="button button-navigate"> <i class="bi bi-skip-start-fill"></i></div>
+        <div id="play" class="button button-biggest"> <i class="bi bi-play-circle-fill"></i></div>
+        <div id="next" class="button button-navigate"> <i class="bi bi-skip-end-fill"></i></div>
+        <div id="repeat" class="button"> <i class="bi bi-repeat"></i></div>
+    </div>
     </div>
 </body>
 
