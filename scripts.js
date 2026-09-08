@@ -164,7 +164,7 @@ progressContainer.addEventListener('click', (event) => {
     const clickPosition = event.offsetX;
     const jumpToTime = (clickPosition / width) * audio.duration;
     audio.currentTime = jumpToTime;
-P});
+});
 
 like.addEventListener('click', () => {
     let likeButton = document.getElementById('like');
