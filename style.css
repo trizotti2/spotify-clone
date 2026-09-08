@@ -63,3 +63,8 @@ body {
     height: inherit;
     width: 50%;
 }
+button{
+    background-color: inherit;
+    color: white;
+    border: none;
+}
