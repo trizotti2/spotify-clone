@@ -54,20 +54,32 @@ body {
 }
 #progress-bar{
     height: 4px;
-    margin-bottom: 5%;
-    background-color: rgba(240, 248, 255, 0.72);
+    margin-bottom: 4%;
+    background-color: rgba(135, 168, 198, 0.72);
     border-radius: 2px;
 }
 #progress{
+    --progress: 0%;
     background-color: rgb(240, 248, 255);
     height: inherit;
-    width: 50%;
+    width: var(--progress);
 }
 button{
     background-color: inherit;
     color: white;
     border: none;
 }
-.green-button{
-    color: green;
+.active-button{
+    color: rgb(24, 178, 24);
+}
+#progress-container{
+    padding-bottom:1em;
+}
+#time-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: smaller;
+    font-weight:100;
+
 }
