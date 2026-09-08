@@ -28,8 +28,69 @@ songName.innerText = songs[0].name;
 artistName.innerText = songs[0].artist;
 cover.src = songs[0].image;
 audio.src = songs[0].location;
+
 let playing = false;
+let repeatSwitch = false;
+let shuffleSwitch = false;
+let playQueueIndex = 0;
 
 play.addEventListener("click", () => {
-    audio.play();
+    if (playing) {
+        play.querySelector(".bi").classList.add("bi-play-circle-fill");
+        play.querySelector(".bi").classList.remove("bi-pause-circle-fill");
+        audio.pause();
+        playing = false;
+    } else {
+        play.querySelector(".bi").classList.remove("bi-play-circle-fill");
+        play.querySelector(".bi").classList.add("bi-pause-circle-fill");
+        audio.play();
+        playing = true;
+    }
+
 });
+
+next.addEventListener('click', () => {
+
+    if (songs[playQueueIndex + 1]) {
+        playQueueIndex += 1;
+        playSong();
+    } else {
+        playQueueIndex = 0;
+        songName.innerText = songs[playQueueIndex].name;
+        artistName.innerText = songs[playQueueIndex].artist;
+        cover.src = songs[playQueueIndex].image;
+        audio.src = songs[playQueueIndex].location;
+        console.log(repeatSwitch);
+        if (repeatSwitch) {
+            playSong(); 
+        } else {
+        audio.pause();
+        }
+    }
+});
+
+previous.addEventListener('click', () => {
+    playQueueIndex -= 1;
+    playSong();
+});
+
+repeat.addEventListener('click', () => {
+    let repeatButton = document.getElementById('repeat');
+    if (repeatSwitch) {
+        repeatButton.classList.remove('green-button');
+        repeatSwitch = false;
+    }
+    else {
+        repeatButton.classList.add('green-button');
+        repeatSwitch = true;
+    }
+});
+
+function playSong() {
+    audio.pause();
+    songName.innerText = songs[playQueueIndex].name;
+    artistName.innerText = songs[playQueueIndex].artist;
+    cover.src = songs[playQueueIndex].image;
+    audio.src = songs[playQueueIndex].location;
+    audio.play();
+}
